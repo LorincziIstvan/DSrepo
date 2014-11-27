@@ -1,0 +1,63 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"      
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+	<h:head>
+        <title>Example for assignment 1</title>
+    </h:head>
+    <h:body>
+    	<h:form>
+    	<h:panelGrid columns="3">
+    		Username:
+    		<h:outputLabel id="user" value="#{loginBean.user.username}"></h:outputLabel>
+ 			<h:message for="user" style="color:red" />
+    	   Password:
+    	   <h:inputSecret id="passwordInput" value="#{loginBean.user.password}">
+    	   <f:validateRegex pattern="((?=.*[a-z]).{6,})" /></h:inputSecret>
+    	   <h:message for="passwordInput" style="color:red" />
+    	    Displayname:
+    	   <h:inputText id="disp" value="#{loginBean.user.displayName}">
+    	   <f:validateLength minimum="5" maximum="20" />
+    	   </h:inputText>
+    	    <h:message for="disp" style="color:red" />
+    	     Address:
+    	   <h:inputText id="address" value="#{loginBean.user.address}">
+    	   <f:validateLength minimum="5" maximum="20" />
+    	   </h:inputText>
+    	    <h:message for="address" style="color:red" />
+    	     Birth Date:
+    	   <h:inputText id="date" value="#{loginBean.dateString}">
+    	   <f:validator validatorId="edu.utcn.ds.lab1.datevalidator" />
+    	   </h:inputText>
+    	    <h:message for="date" style="color:red" />
+    	   X:
+    	   <h:inputText id="x" value="#{loginBean.user.xCoordinate}">
+    	   <f:validateDoubleRange minimum="0.0" maximum="360.0" /></h:inputText>
+    	   <h:message for="x" style="color:red" />
+    	   Y:
+    	   <h:inputText id="y" value="#{loginBean.user.yCoordinate}">
+    	    <f:validateDoubleRange minimum="0.0" maximum="360.0" /></h:inputText>
+    	    <h:message for="y" style="color:red" />
+    	    </h:panelGrid>
+    	    
+    	    <p:outputLabel for="roles" value="Role:" />
+				<p:selectOneMenu id="roles"
+					value="#{loginBean.user.role}" style="width:150px">
+					<f:selectItem itemLabel="" itemValue="" noSelectionOption="true" />
+					<f:selectItems value="#{loginBean.roles}" />
+				</p:selectOneMenu>
+    	
+    	   <h:commandButton value="Edit" action="#{loginBean.editdo}"></h:commandButton>
+    	</h:form>
+    	
+    	<h:form>
+			<h:commandButton id="logout" value="Log out" action="#{loginBean.logout}">
+			</h:commandButton>
+
+		</h:form>
+    </h:body>
+
+</html>
+

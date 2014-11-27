@@ -1,0 +1,40 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"      
+      xmlns:h="http://java.sun.com/jsf/html">
+
+	<h:head>
+        <title>Example for assignment 1</title>
+    </h:head>
+    <h:body>
+    	<h:form>
+    	<h:panelGrid columns="3">
+    		Username:
+    	   <h:inputText id="usernm" value="#{loginBean.user.username}">
+    	   <f:validator validatorId="edu.utcn.ds.lab1.usernamevalidator" /></h:inputText>
+    	   <h:message for="usernm" style="color:red" />
+    	   Password:
+    	   <h:inputSecret id="passwordInput" value="#{loginBean.user.password}">
+    	   <f:validateRegex pattern="((?=.*[a-z]).{6,})" /></h:inputSecret>
+    	   <h:message for="passwordInput" style="color:red" />
+    	    Displayname:
+    	   <h:inputText id="disp" value="#{loginBean.user.displayName}">
+    	   <f:validateLength minimum="5" maximum="20" />
+    	   </h:inputText>
+    	    <h:message for="disp" style="color:red" />
+    	   X:
+    	   <h:inputText id="x" value="#{loginBean.user.xCoordinate}">
+    	   <f:validateDoubleRange minimum="0.0" maximum="360.0" /></h:inputText>
+    	   <h:message for="x" style="color:red" />
+    	   Y:
+    	   <h:inputText id="y" value="#{loginBean.user.yCoordinate}">
+    	    <f:validateDoubleRange minimum="0.0" maximum="360.0" /></h:inputText>
+    	    <h:message for="y" style="color:red" />
+    	    </h:panelGrid>
+    	
+    	   <h:commandButton value="SignUp" action="#{loginBean.createUser}"></h:commandButton>
+    	</h:form>
+    	
+    	
+    </h:body>
+
+</html>

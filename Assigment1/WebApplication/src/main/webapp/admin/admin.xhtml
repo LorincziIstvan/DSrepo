@@ -1,0 +1,93 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Example for assignment 1</title>
+	<script type="text/javascript">
+	   function setHiddenValue(new_value){
+		   alert(new_value);
+		document.getElementById('hidden2').value = new_value;
+	   }
+	</script>
+</h:head>
+<h:body>
+
+	<h:outputText value="#{loginBean.loggedRole}"></h:outputText>
+	<h:outputText value="#{loginBean.loggedUser}"></h:outputText>
+
+	
+
+	<h:dataTable value="#{loginBean.list}" var="o">
+
+		<h:column>
+		<f:facet name="User">User</f:facet>
+		#{o.username}
+		</h:column>
+
+		<h:column>
+		<f:facet name="DisplayName">Display Name</f:facet>
+		#{o.displayName}
+		</h:column>
+
+		<h:column>
+		<f:facet name="Address">Address</f:facet>
+		#{o.address}
+		</h:column>
+		
+		<h:column>
+		<f:facet name="BirthDate">Birth Date</f:facet>
+		#{o.birthDate}
+		</h:column>
+		
+		<h:column>
+		<f:facet name="X">X</f:facet>
+		#{o.xCoordinate}
+		</h:column>
+		
+		<h:column>
+		<f:facet name="Y">Y</f:facet>
+		#{o.yCoordinate}
+		</h:column>
+		
+		<h:column>
+		<f:facet name="Role">Role</f:facet>
+		#{o.role}
+		</h:column>
+		
+
+	</h:dataTable>
+	
+		<h:form>
+			
+				<p:outputLabel for="usernames" value="Select Username: " />
+				<p:selectOneMenu id="usernames"
+					value="#{loginBean.edituser}" style="width:150px">
+					<f:selectItem itemLabel="" itemValue="" noSelectionOption="true" />
+					<f:selectItems value="#{loginBean.usernames}" />
+				</p:selectOneMenu>
+			<h:commandButton id="edit" value="Edit" action="#{loginBean.edit}">
+			</h:commandButton>
+			<h:commandButton id="delete" value="Delete" action="#{loginBean.delete}">
+			</h:commandButton>
+
+		</h:form>
+		
+		<h:form>
+			<h:commandButton id="insert" value="Insert" action="#{loginBean.insert}">
+			</h:commandButton>
+
+		</h:form>
+	
+	
+	<h:form>
+			<h:commandButton id="logout" value="Log out" action="#{loginBean.logout}">
+			</h:commandButton>
+
+		</h:form>
+	
+
+</h:body>
+
+</html>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14143338739960" configfile="/WebApplication/src/main/webapp/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="admin/admin.xhtml" x="122" y="178" id="pf14152588189670" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf14152588189681" path="admin/admin.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="admin/edituser.xhtml" x="338" y="178" id="pf14152588189682" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf14152588189681" path="admin/edituser.xhtml"/>
+  <links id="pf14152588189681" target="pf14152588189682" source="pf14152588189670" outcome="edituser" fromaction="#{loginBean.edit}"/>
+</pageflow:Pageflow>

@@ -1,0 +1,5 @@
+c:\users\ezsvany\documents\visual studio 2013\Projects\Usr\Usr\bin\Debug\Usr.dacpac
+c:\users\ezsvany\documents\visual studio 2013\Projects\Usr\Usr\bin\Debug\Usr.dll
+c:\users\ezsvany\documents\visual studio 2013\Projects\Usr\Usr\bin\Debug\Usr.pdb
+c:\users\ezsvany\documents\visual studio 2013\Projects\Usr\Usr\obj\Debug\Usr.dll
+c:\users\ezsvany\documents\visual studio 2013\Projects\Usr\Usr\obj\Debug\Usr.pdb
